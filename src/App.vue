@@ -1,18 +1,19 @@
 <template>
-    <resource-item 
-        v-for="resource in storedResources" 
-        :key="resource.id"
-        :title="resource.title"
-        :description="resource.description"
-        :link="resource.link"
-    ></resource-item>
+    <the-header
+        :title ="'Remember me'"
+    ></the-header>
+    <stored-resource
+        :resources="storedResources"
+    ></stored-resource>
 </template>
 
 <script>
-import ResourceItem from './components/LearningResource/ResourceItem.vue'
+import TheHeader from './components/layouts/TheHeader.vue'
+import StoredResource from './components/learning-resource/StoreResource.vue'
 export default {
     components: {
-        ResourceItem
+        StoredResource,
+        TheHeader
     },
 
     data() {
@@ -35,3 +36,19 @@ export default {
     },
 }
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+</style>
